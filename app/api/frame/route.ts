@@ -7,7 +7,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse(`<!DOCTYPE html><html><head>
         <title>Frame Sends Eth</title>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB" />
+        <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB" />
         <meta property="fc:frame:input:text" content="Enter Amount Eth" />
         <meta property="fc:frame:button:1" content="Send" />
       </head></html>`);
@@ -16,7 +16,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       return new NextResponse(`<!DOCTYPE html><html><head>
       <title>Frame returns user Eth balance</title>
       <meta property="fc:frame" content="vNext" />
-      <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB" />
+      <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB" />
       <meta property="fc:frame:input:text" content="Enter FID or /username" />
       <meta property="fc:frame:button:1" content="Check Eth Balance" />
     </head></html>`);
