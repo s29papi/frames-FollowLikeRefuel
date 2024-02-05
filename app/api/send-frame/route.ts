@@ -62,15 +62,18 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}" />
       </head></html>`);
       } 
-  
-  return new NextResponse(`<!DOCTYPE html><html><head>
-    <title>This is frame ${id}</title>
-    <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/${id}.png" />
-    <meta property="fc:frame:button:1" content="Next Page" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
-  </head></html>`);
 
+      if(idAsNumber === 4){
+        return new NextResponse(`<!DOCTYPE html><html><head>
+        <title>Frame returns user Eth balance</title>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB"/>
+        <meta property="fc:frame:input:text" content="Enter Amount" />
+        <meta property="fc:frame:button:1" content="Proceed to sign Tx" />
+      </head></html>`);
+    }
+  
+      return NextResponse.redirect('https://socket-pay.vercel.app/', {status: 302});
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
