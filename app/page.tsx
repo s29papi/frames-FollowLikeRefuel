@@ -8,7 +8,7 @@ const frameMetadata = getFrameMetadata({
       {label: 'Deposit or Withdraw', action: 'post_redirect'}
   ],
   image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB',
-  post_url: 'https://rd-orpin.vercel.app/api/frame',
+  post_url: 'https://socket-pay.vercel.app/api/frame',
 });
 
 export const metadata: Metadata = {
