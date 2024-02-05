@@ -5,7 +5,7 @@ const frameMetadata = getFrameMetadata({
   buttons: [
       {label: 'Send Eth', action: 'post'},
       {label: 'Get Eth Balance', action: 'post'},
-      {label: 'Deposit or Withdraw', action: 'post_redirect'}
+      {label: 'Link fid to address', action: 'post_redirect'}
   ],
   image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB',
   post_url: 'https://socket-pay.vercel.app/api/frame',
