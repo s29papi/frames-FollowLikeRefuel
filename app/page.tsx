@@ -7,7 +7,7 @@ const frameMetadata = getFrameMetadata({
       {label: 'Balance', action: 'post'},
       {label: 'Deposit or Withdraw', action: 'post_redirect'}
   ],
-  image: 'https://rd-orpin.vercel.app/video.png',
+  image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB',
   post_url: 'https://rd-orpin.vercel.app/api/frame',
 });
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Socket Pay',
     description: 'A frame facilitating payments between facaster IDs',
-    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB`],
+    images: [`https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB`],
   },
   other: {
     ...frameMetadata,
