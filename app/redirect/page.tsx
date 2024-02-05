@@ -6,7 +6,7 @@ export default function RedirectPage() {
     const router = useRouter();
 
     useEffect(() => {
-        const redirectUrl = 'https://www.twitter.com';
+        const redirectUrl = 'https://socket-pay.web.app/deposit';
 
         // Perform the redirect
         window.location.href = redirectUrl; // For a full page reload redirect
