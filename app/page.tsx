@@ -43,16 +43,22 @@ export default async function Page() {
     if (tableExists) {
       return (<> <h1>Socket Pay</h1></>)
     } else {
-
+      await sql`
+            CREATE TABLE userInfo (
+              userIdx SERIAL PRIMARY KEY,
+              DestinationAddress VARCHAR(255),
+              DestinationChain VARCHAR(255),
+              SourceChain VARCHAR(255),
+              Amount VARCHAR(255) 
+            );
+          `;
+      return (
+        <>
+          <h1>Socket Pay</h1>
+        </>
+      );
     }
-  } catch (error) {
-
-  }
-  return (
-    <>
-      <h1>Socket Pay</h1>
-    </>
-  );
+  } catch (error) {}
 }
 
 
