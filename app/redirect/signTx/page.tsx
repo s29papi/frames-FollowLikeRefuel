@@ -66,6 +66,7 @@ export default function SignTxPage() {
             const apiReturnData = await getRouteTransactionData(route);
             const approvalData = apiReturnData.result.approvalData;
             const { allowanceTarget, minimumApprovalAmount } = approvalData;
+            if (approvalData !== null) { console.log("We in here ")}
             console.log(apiReturnData)
             console.log(approvalData)
             
