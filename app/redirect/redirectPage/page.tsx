@@ -1,14 +1,15 @@
 'use client';
 import {useRouter} from "next/navigation";
-import { useRouter as uRouter } from "next/router";
+import { useSearchParams } from 'next/navigation'
 import {useEffect} from "react";
 
 
 export default function RedirectPage() {
     const router = useRouter();
+    const searchParams = useSearchParams()
  
-    const ur = uRouter();
-    console.log(ur.query)
+    
+    console.log(searchParams.get("SourceChainId"))
 
     useEffect(() => {
         const redirectUrl = 'https://socket-pay.vercel.app/redirect/signTx';
