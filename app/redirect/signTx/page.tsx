@@ -60,7 +60,7 @@ export default function SignTxPage() {
                 toAssetAddress, amount,
                 userAddress, uniqueRoutesPerBridge, sort, singleTxOnly
             );
-
+            console.log(amount)
             console.log(quote)
             
             
