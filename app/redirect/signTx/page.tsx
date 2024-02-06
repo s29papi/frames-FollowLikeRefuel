@@ -98,6 +98,6 @@ async function getQuote(fromChainId: any, fromTokenAddress: any, toChainId: any,
     return json;
 }
 
-4 000 000 000 000 000
-1 015 000 000 000 000 000
-3 900 000 000 000 000
+// 4 000 000 000 000 000
+// 1 015 000 000 000 000 000
+// 3 900 000 000 000 000
