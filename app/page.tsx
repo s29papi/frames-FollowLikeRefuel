@@ -38,7 +38,7 @@ export default async function Page() {
 
     // Extract the result from the query
     const tableExists = tableExistsResult[0].table_exists;
-
+        console.log(tableExists)
     // Check if the table exists
     if (tableExists) {
       return (<> <h1>Socket Pay</h1></>)
