@@ -30,9 +30,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/check-frame?id=1" />
   </head></html>`);
   }
-  if (buttonId === 3){ 
-    return NextResponse.redirect('https://socket-pay.vercel.app/redirect', {status: 302});
-  }
+  // if (buttonId === 3){ 
+  //   return NextResponse.redirect('https://socket-pay.vercel.app/redirect', {status: 302});
+  // }
   return NextResponse.redirect('https://socket-pay.vercel.app/', {status: 302});
 }
 
