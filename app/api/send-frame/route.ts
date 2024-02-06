@@ -1,12 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ethers } from 'ethers';
 import { Alchemy, Network } from 'alchemy-sdk';
-
-// export let userInfo = {
-//   DestinationChain: "",
-//   SourceChain: ""
-
-// }
+import { useSharedData } from '../../sharedData/sharedData';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const settings = {
@@ -21,11 +16,29 @@ alchemy.core.getBlockNumber().then(console.log);
 
 // const signer = provider.getSigner()
 
+  const { sharedData, setSharedData } = useSharedData();
+  const updateSharedData = () => {
+    setSharedData(prevData => ({
+      ...prevData,
+      destinationAddress: ''
+    }));
+  };
+ 
+  
   const searchParams = req.nextUrl.searchParams
   const id:any = searchParams.get("id")
   const idAsNumber = parseInt(id)
 
   if (idAsNumber === 0){
+    const data = await req.json();
+    const untData = data.untrustedData
+    console.log(untData)
+    const updateSharedData = () => {
+      setSharedData(prevData => ({
+        ...prevData,
+        destinationAddress: ''
+      }));
+    };
     return new NextResponse(`<!DOCTYPE html><html><head>
     <title>Frame Sends Eth</title>
     <meta property="fc:frame" content="vNext" />
