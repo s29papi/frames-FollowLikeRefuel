@@ -64,8 +64,10 @@ export default function SignTxPage() {
             const route = quote.result.routes[0];
 
             const apiReturnData = await getRouteTransactionData(route);
+            const approvalData = apiReturnData.result.approvalData;
+            const { allowanceTarget, minimumApprovalAmount } = approvalData;
             console.log(apiReturnData)
-            // console.log(quote)
+            console.log(approvalData)
             
             
         }
