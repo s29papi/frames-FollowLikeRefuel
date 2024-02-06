@@ -60,8 +60,10 @@ export default function SignTxPage() {
                 toAssetAddress, amount,
                 userAddress, uniqueRoutesPerBridge, sort, singleTxOnly
             );
-            console.log(amount)
-            console.log(quote)
+
+            const route = quote.result.routes[0];
+            console.log(route)
+            // console.log(quote)
             
             
         }
@@ -95,3 +97,7 @@ async function getQuote(fromChainId: any, fromTokenAddress: any, toChainId: any,
     const json = await response.json();
     return json;
 }
+
+4 000 000 000 000 000
+1 015 000 000 000 000 000
+3 900 000 000 000 000
