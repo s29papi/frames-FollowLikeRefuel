@@ -1,11 +1,13 @@
 'use client';
 import {useRouter} from "next/navigation";
-import {useEffect} from "react";
+import { useEffect, useState } from 'react';
+import { ethers } from 'ethers';
+
 
 
 export default function SignTxPage() {
     // const router = useRouter();
-
+    const [loading, setLoading] = useState(true);
     // useEffect(() => {
     //     const redirectUrl = 'https://socket-pay.web.app/deposit';
 
@@ -17,7 +19,7 @@ export default function SignTxPage() {
 
     return (
         <div>
-            <p>SignTx...</p>
+            {loading}
         </div>
     );
 }
