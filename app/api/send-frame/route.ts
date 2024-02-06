@@ -61,8 +61,8 @@ alchemy.core.getBlockNumber().then(console.log);
 
   if(idAsNumber === 2){
     let destinationAddress = searchParams.get("DestinationAddress");
-    let userInfo = "DestinationAddress=" + destinationAddress + "&" + "ChainId="; 
-    const buttonId = data.untrustedData.buttonIndex;
+    let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId="; 
+    let buttonId = data.untrustedData.buttonIndex;
     if (buttonId === 1){ 
       userInfo += "1" 
     }
@@ -86,11 +86,11 @@ alchemy.core.getBlockNumber().then(console.log);
 
     if(idAsNumber === 3){
       let destinationAddress = searchParams.get("DestinationAddress");
-      let chainId = searchParams.get("ChainId");
-      let userInfo = "DestinationAddress=" + destinationAddress + "&" + "ChainId=" + "&" + chainId; 
+      let chainId = searchParams.get("DestinationChainId");
+      let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId=" + "&" + chainId; 
 
       return new NextResponse(`<!DOCTYPE html><html><head>
-        <title>Select the Destination chain...</title>
+        <title>Select the Source chain...</title>
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB"/>
         <meta property="fc:frame:button:1" content="Ethereum" />
@@ -106,6 +106,19 @@ alchemy.core.getBlockNumber().then(console.log);
       nextId = idAsNumber + 1
 
       if(idAsNumber === 4){
+        let destinationAddress = searchParams.get("DestinationAddress");
+        let chainId = searchParams.get("DestinationChainId");
+        let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId=" + "&" + chainId + "&" + "SourceChainId="; 
+        const buttonId = data.untrustedData.buttonIndex;
+        if (buttonId === 1){ 
+          userInfo += "1" 
+        }
+        if (buttonId === 2){ 
+          // userInfo.DestinationChain = "ARB" /// get request 
+        }
+        if (buttonId === 3){ 
+          userInfo += "10" 
+        }
         return new NextResponse(`<!DOCTYPE html><html><head>
         <title>Frame returns user Eth balance</title>
         <meta property="fc:frame" content="vNext" />
