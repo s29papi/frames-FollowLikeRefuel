@@ -2,20 +2,27 @@
 import {useRouter} from "next/navigation";
 import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-
+declare global {
+    interface Window {
+      ethereum?: any;
+    }
+  }  
 
 
 export default function SignTxPage() {
     // const router = useRouter();
     const [loading, setLoading] = useState(true);
-    // useEffect(() => {
-    //     const redirectUrl = 'https://socket-pay.web.app/deposit';
+    useEffect(() => { 
+        // connect to meta mask
+        // if it fails indicate wallet not connected
+        const connectToMetamask = async () => {
+            const provider = new ethers.BrowserProvider(window.ethereum)
+            await provider.send("eth_requestAccounts", []);
+            const signer = provider.getSigner()
+        }
 
-    //     // Perform the redirect
-    //     window.location.href = redirectUrl; // For a full page reload redirect
-    //     // Or use Next.js router for client-side redirect (comment out the line above if using this)
-    //     // router.push(youtubeUrl);
-    // }, [router]);
+        connectToMetamask();
+    }, []);
 
     return (
         <div>

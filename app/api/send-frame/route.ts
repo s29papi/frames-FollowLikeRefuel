@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ethers } from 'ethers';
 import { Alchemy, Network } from 'alchemy-sdk';
-declare global {
-  interface Window {
-    ethereum?: any;
-  }
-}
 
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
