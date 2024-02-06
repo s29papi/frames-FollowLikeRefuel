@@ -126,7 +126,7 @@ alchemy.core.getBlockNumber().then(console.log);
         <meta property="fc:frame:input:text" content="Enter Eth Amount" />
         <meta property="fc:frame:button:1" content="Proceed to sign Tx" />
         <meta property="fc:frame:button:1:action" content="post_redirect" />
-        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}" />
+        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}&${userInfo}" />
       </head></html>`);
     }
 
