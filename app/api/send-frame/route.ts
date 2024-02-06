@@ -87,7 +87,7 @@ alchemy.core.getBlockNumber().then(console.log);
     if(idAsNumber === 3){
       let destinationAddress = searchParams.get("DestinationAddress");
       let chainId = searchParams.get("DestinationChainId");
-      let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId=" + "&" + chainId; 
+      let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId=" + chainId; 
 
       return new NextResponse(`<!DOCTYPE html><html><head>
         <title>Select the Source chain...</title>
