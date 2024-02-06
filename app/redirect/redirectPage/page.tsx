@@ -1,12 +1,15 @@
 'use client';
 import {useRouter} from "next/navigation";
+import { useRouter as uRouter } from "next/router";
 import {useEffect} from "react";
-import {useLocation} from 'react-router-dom';
+
 
 export default function RedirectPage() {
     const router = useRouter();
-    const location = useLocation();
-    console.log(location)
+ 
+    const ur = uRouter();
+    console.log(ur.query)
+
     useEffect(() => {
         const redirectUrl = 'https://socket-pay.vercel.app/redirect/signTx';
 
