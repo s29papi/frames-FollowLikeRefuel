@@ -83,6 +83,8 @@ alchemy.core.getBlockNumber().then(console.log);
       </head></html>`);
       } 
 
+      nextId = idAsNumber + 1
+
       if(idAsNumber === 4){
         return new NextResponse(`<!DOCTYPE html><html><head>
         <title>Frame returns user Eth balance</title>
@@ -90,7 +92,18 @@ alchemy.core.getBlockNumber().then(console.log);
         <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB"/>
         <meta property="fc:frame:input:text" content="Enter Eth Amount" />
         <meta property="fc:frame:button:1" content="Proceed to sign Tx" />
+        <meta property="fc:frame:button:1:action" content="post_redirect" />
+        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}" />
       </head></html>`);
+    }
+
+    if(idAsNumber === 5){
+      const data = await req.json();
+      const buttonId = data.untrustedData.buttonIndex;
+      if (buttonId === 1){ 
+        let processPlusSign = "signTx"
+        return NextResponse.redirect("https://socket-pay.vercel.app/redirect" + `${processPlusSign}`, {status: 302});
+      }
     }
   
       return NextResponse.redirect('https://socket-pay.vercel.app/', {status: 302});
