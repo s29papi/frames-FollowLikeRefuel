@@ -39,6 +39,7 @@ alchemy.core.getBlockNumber().then(console.log);
   let nextId = idAsNumber + 1
 
   if(idAsNumber === 1){
+    console.log(req.cookies.get("e"))
       return new NextResponse(`<!DOCTYPE html><html><head>
     <title>Select the Destination chain...</title>
     <meta property="fc:frame" content="vNext" />
