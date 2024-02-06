@@ -40,7 +40,11 @@ export default function SignTxPage() {
 
     return (
         <div>
-            {loading ? (  <div style={spinnerStyle}></div>) : <p>additional content goes here.</p> }
+            {loading ? ( <div style={
+            { height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center"}
+            }>
+                <div style={spinnerStyle}></div>
+            </div> ) : <p>additional content goes here.</p> }
         </div>
     );
 }
