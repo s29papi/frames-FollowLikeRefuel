@@ -19,7 +19,7 @@ export default function SignTxPage() {
 
     return (
         <div>
-            {loading}
+            {loading ? ( <p>Loading...</p>) : <p>additional content goes here.</p> }
         </div>
     );
 }
