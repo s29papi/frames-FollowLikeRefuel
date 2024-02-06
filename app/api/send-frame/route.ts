@@ -16,13 +16,7 @@ alchemy.core.getBlockNumber().then(console.log);
 
 // const signer = provider.getSigner()
 
-  const { sharedData, setSharedData } = useSharedData();
-  const updateSharedData = () => {
-    setSharedData(prevData => ({
-      ...prevData,
-      destinationAddress: ''
-    }));
-  };
+
  
   
   const searchParams = req.nextUrl.searchParams
@@ -30,23 +24,16 @@ alchemy.core.getBlockNumber().then(console.log);
   const idAsNumber = parseInt(id)
 
   if (idAsNumber === 0){
-    const data = await req.json();
-    const untData = data.untrustedData
-    console.log(untData)
-    const updateSharedData = () => {
-      setSharedData(prevData => ({
-        ...prevData,
-        destinationAddress: ''
-      }));
-    };
-    return new NextResponse(`<!DOCTYPE html><html><head>
-    <title>Frame Sends Eth</title>
-    <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB"/>
-    <meta property="fc:frame:button:1" content="Select Destination Chain" />
-    <meta property="fc:frame:button:1:action" content="post"/>
-    <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=1"/>
-  </head></html>`);
+    let response = new NextResponse(`<!DOCTYPE html><html><head>
+        <title>Frame Sends Eth</title>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB"/>
+        <meta property="fc:frame:button:1" content="Select Destination Chain" />
+        <meta property="fc:frame:button:1:action" content="post"/>
+        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=1"/>
+      </head></html>`);
+    response.cookies.set("e", "o");
+    return response
   }
 
   let nextId = idAsNumber + 1
