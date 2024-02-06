@@ -1,6 +1,7 @@
 'use client';
 import {useRouter} from "next/navigation";
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation'
 import { ethers } from 'ethers';
 import "./style.css";
 declare global {
@@ -23,7 +24,8 @@ export default function SignTxPage() {
         height: "100px", // Height
         width: "100px" // Width
       };
-    
+      const searchParams = useSearchParams()
+    console.log(searchParams.get("DestinationAddress"))
     useEffect(() => { 
         // connect to meta mask
         // if it fails indicate wallet not connected
