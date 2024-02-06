@@ -19,6 +19,9 @@ export default function SignTxPage() {
             const provider = new ethers.BrowserProvider(window.ethereum)
             await provider.send("eth_requestAccounts", []);
             const signer = provider.getSigner()
+
+            const address = (await signer).getAddress();
+            console.log('Connected address:', address);
         }
 
         connectToMetamask();
