@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   other: {
     ...frameMetadata,
   },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@eMartiiin94',
+    title: 'Title webtsite',
+    description: 'this is the desciption',
+    images: [`https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB`],
+  }
 };
 
 export default async function Page() {
