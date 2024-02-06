@@ -2,6 +2,7 @@
 import {useRouter} from "next/navigation";
 import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
+import "./styles.css";
 declare global {
     interface Window {
       ethereum?: any;
@@ -19,8 +20,8 @@ export default function SignTxPage() {
         borderRight: "4px solid transparent", // Right border style
         borderBottom: "4px solid transparent", // Bottom border style
         borderLeft: "4px solid transparent", // Left border style
-        height: "12px", // Height
-        width: "12px" // Width
+        height: "100px", // Height
+        width: "100px" // Width
       };
     
     useEffect(() => { 
