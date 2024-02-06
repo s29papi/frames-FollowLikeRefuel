@@ -102,7 +102,7 @@ alchemy.core.getBlockNumber().then(console.log);
       const buttonId = data.untrustedData.buttonIndex;
       if (buttonId === 1){ 
         let processPlusSign = "signTx"
-        return NextResponse.redirect("https://socket-pay.vercel.app/redirect" + `${processPlusSign}`, {status: 302});
+        return NextResponse.redirect("https://socket-pay.vercel.app/redirect/" + `${processPlusSign}`, {status: 302});
       }
     }
   
