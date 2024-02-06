@@ -9,7 +9,7 @@ export default async  function RedirectPage() {
     const searchParams = useSearchParams()
  
     
-    console.log(searchParams.get("SourceChainId"))
+    // console.log(searchParams.get("SourceChainId"))
 
     useEffect(() => {
         const redirectUrl = 'https://socket-pay.vercel.app/redirect/signTx';
