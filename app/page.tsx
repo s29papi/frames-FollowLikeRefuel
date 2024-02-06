@@ -15,6 +15,7 @@ const frameMetadata = getFrameMetadata({
 export const metadata: Metadata = {
   title: 'Socket Pay',
   description: 'On-chain payments powered by Socket Bridge API',
+  metadataBase: new URL('https://socket-pay.vercel.app'),
   openGraph: {
     title: 'Socket Pay',
     description: 'A frame facilitating payments between facaster IDs',
