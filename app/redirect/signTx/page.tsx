@@ -12,6 +12,17 @@ declare global {
 export default function SignTxPage() {
     // const router = useRouter();
     const [loading, setLoading] = useState(true);
+    const spinnerStyle = {
+        animation: "spin 1s linear infinite", // Keyframe animation
+        borderRadius: "50%", // Rounded to make it circular
+        borderTop: "4px solid #87CEEB", // Top border style
+        borderRight: "4px solid transparent", // Right border style
+        borderBottom: "4px solid transparent", // Bottom border style
+        borderLeft: "4px solid transparent", // Left border style
+        height: "12px", // Height
+        width: "12px" // Width
+      };
+    
     useEffect(() => { 
         // connect to meta mask
         // if it fails indicate wallet not connected
@@ -29,7 +40,7 @@ export default function SignTxPage() {
 
     return (
         <div>
-            {loading ? ( <p>Loading...</p>) : <p>additional content goes here.</p> }
+            {loading ? (  <div style={spinnerStyle}></div>) : <p>additional content goes here.</p> }
         </div>
     );
 }
