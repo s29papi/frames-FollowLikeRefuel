@@ -2,7 +2,7 @@
 import {useRouter} from "next/navigation";
 import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import "./styles.css";
+import "./style.css";
 declare global {
     interface Window {
       ethereum?: any;
