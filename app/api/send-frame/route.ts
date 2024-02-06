@@ -1,6 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { ethers } from 'ethers';
+
+declare global {
+  interface Window {
+    ethereum?: any;
+  }
+}
+
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
+  
+  const provider = new ethers.BrowserProvider(window.ethereum) // infur
+  // MetaMask requires requesting permission to connect users accounts
+await provider.send("eth_requestAccounts", []);
+
+const signer = provider.getSigner()
   const searchParams = req.nextUrl.searchParams
   const id:any = searchParams.get("id")
   const idAsNumber = parseInt(id)
