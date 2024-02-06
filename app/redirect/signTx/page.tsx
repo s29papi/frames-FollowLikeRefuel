@@ -71,16 +71,17 @@ export default function SignTxPage() {
             // console.log(approvalData)
 
             // const gasPrice = provider.;
-                let signerAddr =  (await signer).getAddress();
-                console.log(signerAddr)
-            const gasEstimate = await provider.estimateGas({
-                from: signerAddr,
-                to: apiReturnData.result.txTarget,
-                value: apiReturnData.result.value,
-                data: apiReturnData.result.txData,
-                // gasPrice: gasPrice
-            });
-            console.log(gasEstimate)
+            let gp = (await provider.getFeeData()).gasPrice
+            //     let signerAddr =  (await signer).getAddress();
+            //     console.log(signerAddr)
+            // const gasEstimate = await provider.estimateGas({
+            //     from: signerAddr,
+            //     to: apiReturnData.result.txTarget,
+            //     value: apiReturnData.result.value,
+            //     data: apiReturnData.result.txData,
+            //     // gasPrice: gasPrice
+            // });
+            console.log(gp)
         
             // const tx = await signer.sendTransaction({
             //     from: signer.address,
