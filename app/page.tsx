@@ -1,6 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
-import { sql } from '@vercel/postgres';
+
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -26,39 +26,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  try {
-    // Query to check if the table exists
-    const tableExistsResult: any = await sql`
-      SELECT EXISTS (
-          SELECT 1
-          FROM   information_schema.tables 
-          WHERE  table_name = 'userInfo'
-      ) AS table_exists;
-    `;
-
-    // Extract the result from the query
-    const tableExists = tableExistsResult[0].table_exists;
-        console.log(tableExists)
-    // Check if the table exists
-    if (tableExists) {
-      return (<> <h1>Socket Pay</h1></>)
-    } else {
-      await sql`
-            CREATE TABLE userInfo (
-              userIdx SERIAL PRIMARY KEY,
-              DestinationAddress VARCHAR(255),
-              DestinationChain VARCHAR(255),
-              SourceChain VARCHAR(255),
-              Amount VARCHAR(255) 
-            );
-          `;
-      return (
-        <>
-          <h1>Socket Pay</h1>
-        </>
-      );
-    }
-  } catch (error) {}
+  return (
+    <>
+      <h1>Socket Pay</h1>
+    </>
+  );
 }
 
 

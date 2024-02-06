@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ethers } from 'ethers';
 import { Alchemy, Network } from 'alchemy-sdk';
-import { useSharedData } from '../../sharedData/sharedData';
+
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
+  const data = await req.json();
   const settings = {
     apiKey: 'PcjF8aGR1lwutd6YiawYDs05rSYnSL-A', // Replace with your Alchemy API Key.
     network: Network.OPT_MAINNET, // Replace with your network.
@@ -24,13 +25,15 @@ alchemy.core.getBlockNumber().then(console.log);
   const idAsNumber = parseInt(id)
 
   if (idAsNumber === 0){
+    const destinationAddress = data.untrustedData.inputText;
+    let userInfo = "DestinationAddress=" + destinationAddress; 
     let response = new NextResponse(`<!DOCTYPE html><html><head>
         <title>Frame Sends Eth</title>
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB"/>
         <meta property="fc:frame:button:1" content="Select Destination Chain" />
         <meta property="fc:frame:button:1:action" content="post"/>
-        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=1"/>
+        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=1&${userInfo}"/>
       </head></html>`);
     return response
   }
