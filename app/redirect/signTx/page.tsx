@@ -62,7 +62,9 @@ export default function SignTxPage() {
             );
 
             const route = quote.result.routes[0];
-            console.log(route)
+
+            const apiReturnData = await getRouteTransactionData(route);
+            console.log(apiReturnData)
             // console.log(quote)
             
             
@@ -98,6 +100,18 @@ async function getQuote(fromChainId: any, fromTokenAddress: any, toChainId: any,
     return json;
 }
 
-// 4 000 000 000 000 000
-// 1 015 000 000 000 000 000
-// 3 900 000 000 000 000
+// Makes a POST request to Socket APIs for swap/bridge transaction data
+async function getRouteTransactionData(route: any) {
+    const response = await fetch('https://api.socket.tech/v2/build-tx', {
+        method: 'POST',
+        headers: {
+            'API-KEY': API_KEY,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ "route": route })
+    });
+
+    const json = await response.json();
+    return json;
+}
