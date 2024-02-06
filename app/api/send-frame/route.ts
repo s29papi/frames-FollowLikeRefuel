@@ -127,7 +127,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       const buttonId = data.untrustedData.buttonIndex;
       if (buttonId === 1){ 
         let processPlusSign = "redirectPage"
-        return NextResponse.redirect("https://socket-pay.vercel.app/redirect/" + `${processPlusSign}` + "&" + `${userInfo}` , {status: 302});
+        return NextResponse.redirect("https://socket-pay.vercel.app/redirect/" + `${processPlusSign}` + "?" + "&" + `${userInfo}` , {status: 302});
       }
     }
   
