@@ -9,7 +9,7 @@ declare global {
       ethereum?: any;
     }
   }  
-
+  const API_KEY = '72a5b4b0-e727-48be-8aa1-5da9d62fe635'; // SOCKET PUBLIC API KEY
 
 export default function SignTxPage() {
     // const router = useRouter();
@@ -25,7 +25,11 @@ export default function SignTxPage() {
         width: "100px" // Width
       };
       const searchParams = useSearchParams()
-    console.log(searchParams.get("DestinationAddress"))
+      let dAddr = searchParams.get("DestinationAddress")
+      let dchainId = searchParams.get("DestinationChainId")
+      let schainId = searchParams.get("SourceChainId")
+      let iamount = searchParams.get("InputAmount")
+      
     useEffect(() => { 
         // connect to meta mask
         // if it fails indicate wallet not connected
@@ -36,6 +40,30 @@ export default function SignTxPage() {
 
             const address = (await signer).getAddress();
             console.log('Connected address:', address);
+
+             // Bridging Params fetched from users
+            let fromChainId;
+            let toChainId;
+            let amount;
+            if (schainId) fromChainId = parseInt(schainId);
+            if (dchainId) toChainId = parseInt(dchainId);
+            const fromAssetAddress = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+            const toAssetAddress = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+            if (iamount) amount = parseFloat(iamount) * 1e18;
+            const userAddress = dAddr;
+            const uniqueRoutesPerBridge = true; // Returns the best route for a given DEX / bridge combination
+            const sort = "output"; // "output" | "gas" | "time"
+            const singleTxOnly = true;
+
+            const quote = await getQuote(fromChainId,
+                fromAssetAddress, toChainId,
+                toAssetAddress, amount,
+                userAddress, uniqueRoutesPerBridge, sort, singleTxOnly
+            );
+
+            console.log(quote)
+            
+            
         }
 
         connectToMetamask();
@@ -50,4 +78,20 @@ export default function SignTxPage() {
             </div> ) : <p>additional content goes here.</p> }
         </div>
     );
+} 
+
+
+
+async function getQuote(fromChainId: any, fromTokenAddress: any, toChainId: any, toTokenAddress: any, fromAmount: any, userAddress: any, uniqueRoutesPerBridge: any, sort: any, singleTxOnly: any) {
+    const response = await fetch(`https://api.socket.tech/v2/quote?fromChainId=${fromChainId}&fromTokenAddress=${fromTokenAddress}&toChainId=${toChainId}&toTokenAddress=${toTokenAddress}&fromAmount=${fromAmount}&userAddress=${userAddress}&uniqueRoutesPerBridge=${uniqueRoutesPerBridge}&sort=${sort}&singleTxOnly=${singleTxOnly}`, {
+        method: 'GET',
+        headers: {
+            'API-KEY': API_KEY,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+
+    const json = await response.json();
+    return json;
 }
