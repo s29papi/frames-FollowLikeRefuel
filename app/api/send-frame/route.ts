@@ -60,16 +60,17 @@ alchemy.core.getBlockNumber().then(console.log);
   nextId = idAsNumber + 1
 
   if(idAsNumber === 2){
-    const data = await req.json();
+    let destinationAddress = searchParams.get("DestinationAddress");
+    let userInfo = "DestinationAddress=" + destinationAddress + "&" + "ChainId="; 
     const buttonId = data.untrustedData.buttonIndex;
     if (buttonId === 1){ 
-      // userInfo.DestinationChain = "ETH"
+      userInfo += "1" 
     }
     if (buttonId === 2){ 
-      // userInfo.DestinationChain = "ARB"
+      // userInfo.DestinationChain = "ARB" /// get request 
     }
     if (buttonId === 3){ 
-      // userInfo.DestinationChain = "OP"
+      userInfo += "10" 
     }
     return new NextResponse(`<!DOCTYPE html><html><head>
         <title>Frame Sends Eth</title>
@@ -77,7 +78,7 @@ alchemy.core.getBlockNumber().then(console.log);
         <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB"/>
         <meta property="fc:frame:button:1" content="Select Source Chain" />
         <meta property="fc:frame:button:1:action" content="post"/>
-        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}"/>
+        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}&${userInfo}"/>
       </head></html>`);
     } 
 
