@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ethers } from 'ethers';
-
+import { Alchemy, Network } from 'alchemy-sdk';
 declare global {
   interface Window {
     ethereum?: any;
@@ -9,12 +9,18 @@ declare global {
 
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
-  
-  const provider = new ethers.BrowserProvider(window.ethereum) // infur
-  // MetaMask requires requesting permission to connect users accounts
-await provider.send("eth_requestAccounts", []);
+  const settings = {
+    apiKey: 'PcjF8aGR1lwutd6YiawYDs05rSYnSL-A', // Replace with your Alchemy API Key.
+    network: Network.OPT_MAINNET, // Replace with your network.
+};
 
-const signer = provider.getSigner()
+const alchemy = new Alchemy(settings);
+alchemy.core.getBlockNumber().then(console.log);
+//   // MetaMask requires requesting permission to connect users accounts
+// await provider.send("eth_requestAccounts", []);
+
+// const signer = provider.getSigner()
+
   const searchParams = req.nextUrl.searchParams
   const id:any = searchParams.get("id")
   const idAsNumber = parseInt(id)
