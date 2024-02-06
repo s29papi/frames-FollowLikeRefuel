@@ -1,5 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
+import { db } from '@vercel/postgres';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -24,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const client = await db.connect();
   return (
     <>
       <h1>Socket Pay</h1>

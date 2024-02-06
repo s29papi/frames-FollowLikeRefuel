@@ -32,14 +32,13 @@ alchemy.core.getBlockNumber().then(console.log);
         <meta property="fc:frame:button:1:action" content="post"/>
         <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=1"/>
       </head></html>`);
-    response.cookies.set("e", "o");
     return response
   }
 
   let nextId = idAsNumber + 1
 
   if(idAsNumber === 1){
-    console.log(req.cookies.get("e"))
+    
       return new NextResponse(`<!DOCTYPE html><html><head>
     <title>Select the Destination chain...</title>
     <meta property="fc:frame" content="vNext" />
