@@ -64,11 +64,32 @@ export default function SignTxPage() {
             const route = quote.result.routes[0];
 
             const apiReturnData = await getRouteTransactionData(route);
-            const approvalData = apiReturnData.result.approvalData;
-            const { allowanceTarget, minimumApprovalAmount } = approvalData;
-            if (approvalData !== null) { console.log("We in here ")}
-            console.log(apiReturnData)
-            console.log(approvalData)
+            // const approvalData = apiReturnData.result.approvalData;
+            // const { allowanceTarget, minimumApprovalAmount } = approvalData;
+            // if (approvalData !== null) { console.log("We in here ")}
+            // console.log(apiReturnData)
+            // console.log(approvalData)
+
+            // const gasPrice = provider.;
+                let signerAddr =  (await signer).getAddress();
+                console.log(signerAddr)
+            const gasEstimate = await provider.estimateGas({
+                from: signerAddr,
+                to: apiReturnData.result.txTarget,
+                value: apiReturnData.result.value,
+                data: apiReturnData.result.txData,
+                // gasPrice: gasPrice
+            });
+            console.log(gasEstimate)
+        
+            // const tx = await signer.sendTransaction({
+            //     from: signer.address,
+            //     to: apiReturnData.result.txTarget,
+            //     data: apiReturnData.result.txData,
+            //     value: apiReturnData.result.value,
+            //     gasPrice: gasPrice,
+            //     gasLimit: gasEstimate
+            // });
             
             
         }
