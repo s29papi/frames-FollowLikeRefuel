@@ -5,19 +5,6 @@ import { Alchemy, Network } from 'alchemy-sdk';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const data = await req.json();
-  const settings = {
-    apiKey: 'PcjF8aGR1lwutd6YiawYDs05rSYnSL-A', // Replace with your Alchemy API Key.
-    network: Network.OPT_MAINNET, // Replace with your network.
-};
-
-const alchemy = new Alchemy(settings);
-alchemy.core.getBlockNumber().then(console.log);
-//   // MetaMask requires requesting permission to connect users accounts
-// await provider.send("eth_requestAccounts", []);
-
-// const signer = provider.getSigner()
-
-
   let getParams = req.nextUrl.searchParams
   
   const searchParams = req.nextUrl.searchParams
@@ -67,7 +54,7 @@ alchemy.core.getBlockNumber().then(console.log);
       userInfo += "1" 
     }
     if (buttonId === 2){ 
-      // userInfo.DestinationChain = "ARB" /// get request 
+      userInfo += "42161"
     }
     if (buttonId === 3){ 
       userInfo += "10" 
@@ -114,7 +101,7 @@ alchemy.core.getBlockNumber().then(console.log);
           userInfo += "1" 
         }
         if (buttonId === 2){ 
-          // userInfo.DestinationChain = "ARB" /// get request 
+          userInfo += "42161" 
         }
         if (buttonId === 3){ 
           userInfo += "10" 
@@ -130,12 +117,17 @@ alchemy.core.getBlockNumber().then(console.log);
       </head></html>`);
     }
 
+    // populate it to have the input amount
     if(idAsNumber === 5){
-      const data = await req.json();
+      let destinationAddress = searchParams.get("DestinationAddress");
+        let dchainId = searchParams.get("DestinationChainId");
+        let schainId = searchParams.get("SourceChainId");
+        const inputAmount = data.untrustedData.inputText;
+        let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId=" +  dchainId + "&" + "SourceChainId=" + schainId + "&" + "InputAmount=" + inputAmount; 
       const buttonId = data.untrustedData.buttonIndex;
       if (buttonId === 1){ 
         let processPlusSign = "redirectPage"
-        return NextResponse.redirect("https://socket-pay.vercel.app/redirect/" + `${processPlusSign}`, {status: 302});
+        return NextResponse.redirect("https://socket-pay.vercel.app/redirect/" + `${processPlusSign}` + "&" + `${userInfo}` , {status: 302});
       }
     }
   
@@ -147,3 +139,18 @@ export async function POST(req: NextRequest): Promise<Response> {
 }
 
 export const dynamic = 'force-dynamic';
+
+
+
+
+// const alchemy = new Alchemy(settings);
+// alchemy.core.getBlockNumber().then(console.log);
+// //   // MetaMask requires requesting permission to connect users accounts
+// // await provider.send("eth_requestAccounts", []);
+
+// // const signer = provider.getSigner()
+// const settings = {
+  //     apiKey: 'PcjF8aGR1lwutd6YiawYDs05rSYnSL-A', // Replace with your Alchemy API Key.
+  //     network: Network.OPT_MAINNET, // Replace with your network.
+  // };
+  
