@@ -108,7 +108,7 @@ alchemy.core.getBlockNumber().then(console.log);
       if(idAsNumber === 4){
         let destinationAddress = searchParams.get("DestinationAddress");
         let chainId = searchParams.get("DestinationChainId");
-        let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId=" + "&" + chainId + "&" + "SourceChainId="; 
+        let userInfo = "DestinationAddress=" + destinationAddress + "&" + "DestinationChainId=" +  chainId + "&" + "SourceChainId="; 
         const buttonId = data.untrustedData.buttonIndex;
         if (buttonId === 1){ 
           userInfo += "1" 
