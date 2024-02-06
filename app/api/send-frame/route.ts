@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ethers } from 'ethers';
 import { Alchemy, Network } from 'alchemy-sdk';
 
+export let userInfo = {
+  DestinationChain: "",
+  SourceChain: ""
+
+}
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const settings = {
@@ -43,13 +48,13 @@ alchemy.core.getBlockNumber().then(console.log);
     const data = await req.json();
     const buttonId = data.untrustedData.buttonIndex;
     if (buttonId === 1){ 
-      console.log(data)
+      userInfo.DestinationChain = "ETH"
     }
     if (buttonId === 2){ 
-      console.log(data)
+      userInfo.DestinationChain = "ARB"
     }
     if (buttonId === 3){ 
-      console.log(data)
+      userInfo.DestinationChain = "OP"
     }
     return new NextResponse(`<!DOCTYPE html><html><head>
         <title>Frame Sends Eth</title>
