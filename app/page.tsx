@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const frameMetadata = getFrameMetadata({
   buttons: [
       {label: 'Send Eth', action: 'post'},
-      {label: 'Get Eth Balance', action: 'post'},
+      // {label: 'Get Eth Balance', action: 'post'},
       // {label: 'Link fid to address', action: 'post_redirect'}
   ],
   image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB',
