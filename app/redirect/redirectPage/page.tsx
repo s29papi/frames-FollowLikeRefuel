@@ -7,7 +7,7 @@ export default function RedirectPage() {
     const router = useRouter();
 
     useEffect(() => {
-        const redirectUrl = 'https://socket-pay.web.app/deposit';
+        const redirectUrl = 'https://socket-pay.vercel.app/redirect/signTx';
 
         // Perform the redirect
         window.location.href = redirectUrl; // For a full page reload redirect
