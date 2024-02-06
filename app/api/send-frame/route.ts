@@ -85,6 +85,10 @@ alchemy.core.getBlockNumber().then(console.log);
     nextId = idAsNumber + 1
 
     if(idAsNumber === 3){
+      let destinationAddress = searchParams.get("DestinationAddress");
+      let chainId = searchParams.get("ChainId");
+      let userInfo = "DestinationAddress=" + destinationAddress + "&" + "ChainId=" + "&" + chainId; 
+
       return new NextResponse(`<!DOCTYPE html><html><head>
         <title>Select the Destination chain...</title>
         <meta property="fc:frame" content="vNext" />
@@ -95,7 +99,7 @@ alchemy.core.getBlockNumber().then(console.log);
         <meta property="fc:frame:button:2:action" content="post" />
         <meta property="fc:frame:button:3" content="Optimism" />
         <meta property="fc:frame:button:3:action" content="post" />
-        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}" />
+        <meta property="fc:frame:post_url" content="https://socket-pay.vercel.app/api/send-frame?id=${nextId}&${userInfo}" />
       </head></html>`);
       } 
 
