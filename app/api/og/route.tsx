@@ -5,5 +5,13 @@ export const runtime = "edge";
 
 
 export async function GET() {
-    return new ImageResponse(<div>Drippie</div>)
+    return new ImageResponse(
+        (
+            <div>Drippie</div>
+        ),
+        {
+            width: 191,
+            height:100,
+        }
+    )
 }
