@@ -12,7 +12,7 @@ export async function GET() {
             fontSize: 40,
             color: 'black',
             background: 'white',
-            width: '191px', // Adjusted width to 191 pixels
+            width: '1080px', // Adjusted width to 191 pixels
             height: '100px', // Adjusted height to 100 pixels
             padding: '50px 0', // Adjusted padding to center content vertically
             textAlign: 'center',
@@ -25,8 +25,8 @@ export async function GET() {
       </div>
         ),
         {
-            width: 191,
-            height:1080,
+            width: 1080,
+            height:100,
         }
     )
 }
