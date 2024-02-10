@@ -12,8 +12,8 @@ export async function GET() {
             fontSize: 40,
             color: 'black',
             background: 'white',
-            width: '1080px', // Adjusted width to 191 pixels
-            height: '100px', // Adjusted height to 100 pixels
+            width: '1910px', // Adjusted width to 191 pixels
+            height: '1000px', // Adjusted height to 100 pixels
             padding: '50px 0', // Adjusted padding to center content vertically
             textAlign: 'center',
             display: 'flex', // Changed display to flex for alignment
@@ -25,8 +25,8 @@ export async function GET() {
       </div>
         ),
         {
-            width: 1080,
-            height:100,
+            width: 1910,
+            height:1000,
         }
     )
 }
