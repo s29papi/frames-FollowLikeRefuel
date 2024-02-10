@@ -9,15 +9,16 @@ export async function GET() {
         (
             <div
         style={{
-          fontSize: 40,
-          color: 'black',
-          background: 'white',
-          width: '100%',
-          height: '100%',
-          padding: '50px 200px',
-          textAlign: 'center',
-          justifyContent: 'center',
-          alignItems: 'center',
+            fontSize: 40,
+            color: 'black',
+            background: 'white',
+            width: '191px', // Adjusted width to 191 pixels
+            height: '100px', // Adjusted height to 100 pixels
+            padding: '50px 0', // Adjusted padding to center content vertically
+            textAlign: 'center',
+            display: 'flex', // Changed display to flex for alignment
+            justifyContent: 'center',
+            alignItems: 'center',
         }}
       >
         👋 Hello 你好 नमस्ते こんにちは สวัสดีค่ะ 안녕 добрий день Hallá
