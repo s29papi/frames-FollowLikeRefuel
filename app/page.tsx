@@ -6,7 +6,7 @@ const frameMetadata = getFrameMetadata({
   buttons: [
       {label: 'Refuel', action: 'post'},
   ],
-  image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB',
+  image: 'https://frames-follow-like-refuel.vercel.app/api/og',
   post_url: 'https://frames-follow-like-refuel.vercel.app/api/frame',
 });
 
