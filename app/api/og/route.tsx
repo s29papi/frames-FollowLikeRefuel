@@ -26,7 +26,7 @@ export async function GET() {
         ),
         {
             width: 191,
-            height:100,
+            height:1080,
         }
     )
 }
