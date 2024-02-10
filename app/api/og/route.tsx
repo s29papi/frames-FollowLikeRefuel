@@ -9,7 +9,7 @@ export async function GET() {
         (
             <div
         style={{
-            fontSize: 40,
+            fontSize: 52,
             color: 'black',
             background: 'white',
             width: '1910px', // Adjusted width to 191 pixels
@@ -21,7 +21,8 @@ export async function GET() {
             alignItems: 'center',
         }}
       >
-        👋 Hello 你好 नमस्ते こんにちは สวัสดีค่ะ 안녕 добрий день Hallá
+        
+        👋 Hello, @socket.tech wants you to have a refuel. Follow, Like, them, and claim refuel. 🚀
       </div>
         ),
         {
