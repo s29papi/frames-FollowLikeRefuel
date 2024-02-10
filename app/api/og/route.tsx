@@ -19,15 +19,11 @@ export async function GET() {
             display: 'flex', // Changed display to flex for alignment
             justifyContent: 'center',
             alignItems: 'center',
+            whiteSpace: 'pre-line'
         }}
       >
-        
-             <div>
-                👋 Hello, <span style={{ color: 'purple' }}>@socket.tech</span> wants you to have a refuel.
-            </div>
-            <div>
-                Follow, Like cast, then, claim refuel. 🚀
-            </div>
+            👋 Hello, <span style={{ color: 'purple' }}>@socket.tech</span> wants you to have a refuel.
+             Follow, Like cast, then, claim refuel. 🚀
       </div>
         ),
         {
