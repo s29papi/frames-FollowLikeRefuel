@@ -4,39 +4,30 @@ import type { Metadata } from 'next';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
-      {label: 'Send Eth', action: 'post'},
-      // {label: 'Get Eth Balance', action: 'post'},
-      // {label: 'Link fid to address', action: 'post_redirect'}
+      {label: 'Refuel', action: 'post'},
   ],
   image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB',
   post_url: 'https://socket-pay.vercel.app/api/frame',
 });
 
 export const metadata: Metadata = {
-  title: 'Socket Pay',
-  description: 'On-chain payments powered by Socket Bridge API',
+  title: 'Refuel-Frame by socket.',
+  description: 'Follow this user, Like the post, and Refuel.',
   metadataBase: new URL('https://socket-pay.vercel.app'),
   openGraph: {
-    title: 'Socket Pay',
-    description: 'A frame facilitating payments between facaster IDs',
+    title: 'Refuel-Frame by socket.',
+    description: 'Follow this user, Like the post, and Refuel.',
     images: [`https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB`],
   },
   other: {
     ...frameMetadata,
   },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@eMartiiin94',
-    title: 'Title webtsite',
-    description: 'this is the desciption',
-    images: [`https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmZPrZ45GrnmjbGw6Xj27mzgpju7FCguKAbwBkUVxBTPVB`],
-  }
 };
 
 export default async function Page() {
   return (
     <>
-      <h1>Socket Pay</h1>
+      <h1>Refuel-Frame by socket.</h1>
     </>
   );
 }
