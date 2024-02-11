@@ -9,10 +9,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let liked;
   if (message?.following) following = message?.following
   if (message?.liked) liked = message?.liked
-  
-  // 3 responses
-
-  
 
   // if the interactive user hasn't followed and liked cast return 
   if (!liked && !following) {
