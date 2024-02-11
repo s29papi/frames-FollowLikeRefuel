@@ -4,17 +4,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const data = await req.json();
   const buttonId = data.untrustedData.buttonIndex;
   // 3 responses
-  if (false) {
-          return new NextResponse(`<!DOCTYPE html><html><head>
-          <title>Frame </title>
-          <meta property="fc:frame" content="vNext" />
-          <meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/api/og"/>
-          <meta property="fc:frame:input:text" content="Enter Address.." />
-          <meta property="fc:frame:button:1" content="Submit" />
-          <meta property="fc:frame:button:1:action" content="post"/>
-          <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/send-frame?id=0"/>
-        </head></html>`);
-  }
 
   // if the interactive user hasn't followed and liked cast return 
   if (false) {
@@ -27,10 +16,21 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/send-frame?id=0"/>
       </head></html>`);
   }
+// if the interactive user hasn't liked cast return 
+  if (false) {
+        return new NextResponse(`<!DOCTYPE html><html><head>
+        <title>Like Cast</title>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmfHYnG4NthhjZ684FLNTEtuiymiMcrmoQq164mZYkxKHa"/>
+        <meta property="fc:frame:button:1" content="Refuel" />
+        <meta property="fc:frame:button:1:action" content="post"/>
+        <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/send-frame?id=0"/>
+    </head></html>`);
+  }
       return new NextResponse(`<!DOCTYPE html><html><head>
-                <title>Like Cast</title>
+                <title>Follow User</title>
                 <meta property="fc:frame" content="vNext" />
-                <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmfHYnG4NthhjZ684FLNTEtuiymiMcrmoQq164mZYkxKHa"/>
+                <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmNskr3tpJpkBmT3aJzocfxgeWHQTjsFTz12Ms6M99w5DP"/>
                 <meta property="fc:frame:button:1" content="Refuel" />
                 <meta property="fc:frame:button:1:action" content="post"/>
                 <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/send-frame?id=0"/>
