@@ -15,7 +15,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           return new NextResponse(`<!DOCTYPE html><html><head>
           <title>Like & Follow</title>
           <meta property="fc:frame" content="vNext" />
-          <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmRUEpTXSm2cjuDDgzS4pvXC9E9g2gtXuGVw8D3BCV5iup"/>
+          <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmYfs8ZD3AGAXanmw1XXnDTWf4qGcueCT1JbJD78aJiLfL"/>
           <meta property="fc:frame:button:1" content="Refuel" />
           <meta property="fc:frame:button:1:action" content="post"/>
           <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/frame"/>
