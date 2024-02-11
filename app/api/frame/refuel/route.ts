@@ -11,7 +11,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   return new NextResponse(`<!DOCTYPE html><html><head>
   <title>Success</title>
   <meta property="fc:frame" content="vNext" />
-  <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmfKdkKxDajqqEq4L7pTwwFaKG4a55mqQhC7X4ff9pEUhs"/>
+  <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmXGeear4FPk4YAjU3hGTFZCSXi8dWV9oF9njxnyXCsGb5"/>
   <meta property="fc:frame:button:1" content="Success 🎉" />
 </head></html>`);
   // const data = await req.json();
