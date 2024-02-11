@@ -19,6 +19,7 @@ export async function GET() {
             display: 'flex', // Changed display to flex for alignment
             justifyContent: 'center',
             alignItems: 'center',
+            wordWrap: 'break-word',
         }}
       >
         
