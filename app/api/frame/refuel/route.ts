@@ -4,6 +4,8 @@ import { Alchemy, Network } from 'alchemy-sdk';
 
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
+  // when a user swap+bridges to get gas tokens on the destination chain 
+  // 1. the user is going to recieve his token by / through the bridge and das 
 
   // process refuel with socket api's
   return new NextResponse(`<!DOCTYPE html><html><head>
@@ -147,6 +149,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 }
 
 export const dynamic = 'force-dynamic';
+
 
 
 
