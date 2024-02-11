@@ -8,23 +8,24 @@ export async function GET() {
     return new ImageResponse(
         (
             <div
-        style={{
-            fontSize: 48,
-            color: 'black',
-            background: 'white',
-            width: '1910px', // Adjusted width to 191 pixels
-            height: '1000px', // Adjusted height to 100 pixels
-            padding: '50px 0', // Adjusted padding to center content vertically
-            textAlign: 'center',
-            display: 'flex', // Changed display to flex for alignment
-            justifyContent: 'center',
-            alignItems: 'center',
-            wordWrap: 'break-word',
-        }}
-      >
-        
-        👋 Hello, <span style={{color: "blue"}}>@socket.tech</span> wants you to have a refuel. Follow, Like this cast, then, click refuel. 🚀
-      </div>
+                style={{
+                height: '100%',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+                padding: '50px 0',
+                justifyContent: 'center',
+                backgroundColor: '#fff',
+                fontSize: 22,
+                fontWeight: 200,
+                }}
+          >
+                
+                <div style={{ marginTop: 40, display: 'flex', whiteSpace: 'pre-wrap' }}>👋 Hello, <span style={{color: 'blue'}}>@socket.tech</span> wants you to have a refuel. </div>
+                <div style={{ marginTop: 8 }}>Follow, Like this cast, then, click refuel. 🚀</div>
+            </div>
         ),
         {
             width: 1910,
@@ -32,3 +33,4 @@ export async function GET() {
         }
     )
 }
+
