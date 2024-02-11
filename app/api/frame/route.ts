@@ -5,6 +5,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const buttonId = data.untrustedData.buttonIndex;
   // 3 responses
 
+  // check here
+
   // if the interactive user hasn't followed and liked cast return 
   if (false) {
           return new NextResponse(`<!DOCTYPE html><html><head>
@@ -38,6 +40,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/send-frame?id=0"/>
     </head></html>`);
   }
+  // in sedn frames, process refuel and return successful 
     return new NextResponse(`<!DOCTYPE html><html><head>
               <title>Input Wallet Address</title>
               <meta property="fc:frame" content="vNext" />
