@@ -22,8 +22,8 @@ export async function GET() {
         }}
       >
         
-        👋 Hello, <span style={{color: "blue"}}>@socket.tech</span> wants you to have a refuel. Follow, Like cast, then, 
-        <div>click refuel. 🚀</div> 
+        <span>👋 Hello, <span style={{color: "blue"}}>@socket.tech</span> wants you to have a refuel. Follow, Like this cast, then,</span> 
+        <span>click refuel. 🚀</span> 
       </div>
         ),
         {
