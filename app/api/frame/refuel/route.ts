@@ -5,11 +5,11 @@ import { Alchemy, Network } from 'alchemy-sdk';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
 
+  // process refuel with socket api's
   return new NextResponse(`<!DOCTYPE html><html><head>
   <title>Success</title>
   <meta property="fc:frame" content="vNext" />
   <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmfKdkKxDajqqEq4L7pTwwFaKG4a55mqQhC7X4ff9pEUhs"/>
-  <meta property="fc:frame:input:text" content="Wallet Address..." />
   <meta property="fc:frame:button:1" content="Success 🎉" />
 </head></html>`);
   // const data = await req.json();
