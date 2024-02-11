@@ -9,7 +9,7 @@ export async function GET() {
         (
             <div
         style={{
-            fontSize: 52,
+            fontSize: 48,
             color: 'black',
             background: 'white',
             width: '1910px', // Adjusted width to 191 pixels
@@ -19,11 +19,10 @@ export async function GET() {
             display: 'flex', // Changed display to flex for alignment
             justifyContent: 'center',
             alignItems: 'center',
-            whiteSpace: 'pre-line'
         }}
       >
-            👋 Hello, <span style={{ color: 'purple' }}>@socket.tech</span> wants you to have a refuel.
-             Follow, Like cast, then, claim refuel. 🚀
+        
+        👋 Hello, <span style={{color: "blue"}}>@socket.tech</span> wants you to have a refuel. Follow, Like cast, then,  claim refuel. 🚀
       </div>
         ),
         {
