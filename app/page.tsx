@@ -6,7 +6,7 @@ const frameMetadata = getFrameMetadata({
   buttons: [
       {label: 'Refuel', action: 'post'},
   ],
-  image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmTEVYordi1qGKnCKPgzwohUDV7VN3YdyceNfoxQKrtYnL',
+  image: 'https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmQYPboTDNPfryKQgY4rRkYZ1rgtsrESgiHAXVneGNfFrc',
   post_url: 'https://frames-follow-like-refuel.vercel.app/api/frame',
 });
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Refuel-Frame by socket.',
     description: 'Follow this user, Like the post, and Refuel.',
-    images: [`https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmTEVYordi1qGKnCKPgzwohUDV7VN3YdyceNfoxQKrtYnL`],
+    images: [`https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmQYPboTDNPfryKQgY4rRkYZ1rgtsrESgiHAXVneGNfFrc`],
   },
   other: {
     ...frameMetadata,
