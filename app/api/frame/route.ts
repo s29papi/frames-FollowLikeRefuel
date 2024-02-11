@@ -47,7 +47,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse(`<!DOCTYPE html><html><head>
               <title>Input Wallet Address</title>
               <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmVQGtDeK7eLFa3oDdqGXF24rvezH4hXkjPkVQSkL22giS"/>
+              <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmVfJeE5pEXPhALNSj7a7a2EJ9MDEG7MnhegQbBhFeMEVc"/>
               <meta property="fc:frame:input:text" content="Wallet Address..." />
               <meta property="fc:frame:button:1" content="Submit" />
               <meta property="fc:frame:button:1:action" content="post"/>
