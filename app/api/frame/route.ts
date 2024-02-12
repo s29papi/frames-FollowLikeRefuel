@@ -58,12 +58,21 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   // await sendXdai();
 
-  return new NextResponse(`<!DOCTYPE html><html><head>
-  <title>Success</title>
-  <meta property="fc:frame" content="vNext" />
-  <meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/sixth-page.png"/>
-  <meta property="fc:frame:button:1" content="Success sent to ${message?.interactor.verified_accounts[0]} on Gnosis Chain  🎉" />
-  <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/frame/refuel?address="${message?.interactor.verified_accounts[0]}""/>
+//   return new NextResponse(`<!DOCTYPE html><html><head>
+//   <title>Success</title>
+//   <meta property="fc:frame" content="vNext" />
+//   <meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/sixth-page.png"/>
+//   <meta property="fc:frame:button:1" content="Success sent to ${message?.interactor.verified_accounts[0]} on Gnosis Chain  🎉" />
+//   <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/frame/refuel?address="${message?.interactor.verified_accounts[0]}""/>
+// </head></html>`);
+
+return new NextResponse(`<!DOCTYPE html><html><head>
+<title>Connect Address</title>
+<meta property="fc:frame" content="vNext" />
+<meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/seventh-page.png"/>
+<meta property="fc:frame:button:1" content="Refuel" />
+<meta property="fc:frame:button:1:action" content="post"/>
+<meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/frame"/>
 </head></html>`);
 }
 
