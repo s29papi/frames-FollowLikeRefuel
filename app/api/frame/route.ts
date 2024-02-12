@@ -52,7 +52,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/seventh-page.png"/>
     <meta property="fc:frame:button:1" content="Refuel" />
     <meta property="fc:frame:button:1:action" content="post"/>
-    <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/frame"/>
+    <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/frame"/>
   </head></html>`);
   }
 
@@ -64,7 +64,7 @@ return new NextResponse(`<!DOCTYPE html><html><head>
   <meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/eight-page.png"/>
   <meta property="fc:frame:button:1" content="Complete" />
   <meta property="fc:frame:button:1:action" content="post"/>
-  <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/frame/refuel?address=${message?.interactor.verified_accounts[0]}"/>
+  <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/api/frame/refuel?address=${message?.interactor.verified_accounts[0]}"/>
   </head></html>`);
 }
 
