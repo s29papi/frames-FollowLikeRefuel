@@ -57,7 +57,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   return new NextResponse(`<!DOCTYPE html><html><head>
   <title>Success</title>
   <meta property="fc:frame" content="vNext" />
-  <meta property="fc:frame:image" content="https://magenta-hollow-tiglon-795.mypinata.cloud/ipfs/QmXGeear4FPk4YAjU3hGTFZCSXi8dWV9oF9njxnyXCsGb5"/>
+  <meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/sixth-page.png"/>
   <meta property="fc:frame:button:1" content="Success sent to ${message?.interactor.verified_accounts[0]} on Gnosis Chain  🎉" />
 </head></html>`);
 }
