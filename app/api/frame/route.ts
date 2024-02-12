@@ -67,9 +67,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 // </head></html>`);
 
 return new NextResponse(`<!DOCTYPE html><html><head>
-<title>Connect Address</title>
+<title>Success</title>
 <meta property="fc:frame" content="vNext" />
-<meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/seventh-page.png"/>
+<meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/sixth-page.png"/>
 <meta property="fc:frame:button:1" content="Refuel" />
 <meta property="fc:frame:button:1:action" content="post"/>
 <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/frame"/>
