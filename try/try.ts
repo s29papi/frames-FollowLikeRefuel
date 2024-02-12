@@ -30,7 +30,12 @@ async function getQuote() {
     let destinationChain = gnosisChainId;
     let fromAssetAddress = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
     let toAssetAddress = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
-    const amount = 100000000000000000; // 0.1 Matic decimals
+    const amount = 0; // 0.1 Matic decimals
+    // const amount = 1 00 000 000 000 000 000; // 0.1 Matic decimals
+                    //  21 874 915 496 893 470
+                    //  47 382 823 236 483 390
+                    //  38 230 216 531 136 629
+                //  34 864 248 437 678 900 000
     //                 20211737900598360 
     let recipientAddr = "0x5E0f293eEBa536e6cDeB0B9da03d1b5335dC29De";
     const uniqueRoutesPerBridge = true;
@@ -85,7 +90,8 @@ async function main() {
 
     // let supportedChainsAndRefuellingLimits = await getSupportedChainsAndRefuellingLimits()
     // console.log(supportedChainsAndRefuellingLimits.result[4])
-    console.log(quote)
+    console.log(quote.result)
+ 
 
     let maxamount =  await polygonGnosisMaxAmount()
 
@@ -98,6 +104,7 @@ async function main() {
 
     //  '5_139_577_172_852_925',
     //  '17_131_923_909_509_750_000'
+
 }
 
 main();
