@@ -6,7 +6,7 @@ const frameMetadata = getFrameMetadata({
   buttons: [
       {label: 'Refuel', action: 'post'},
   ],
-  image: 'https://frames-follow-like-refuel.vercel.app/public/first-page.png',
+  image: 'https://frames-follow-like-refuel.vercel.app/first-page.png',
   post_url: 'https://frames-follow-like-refuel.vercel.app/api/frame',
 });
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Refuel-Frame by socket.',
     description: 'Follow this user, Like the post, and Refuel.',
-    images: [`https://frames-follow-like-refuel.vercel.app/public/first-page.png`],
+    images: [`https://frames-follow-like-refuel.vercel.app/first-page.png`],
   },
   other: {
     ...frameMetadata,
