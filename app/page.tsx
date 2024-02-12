@@ -13,7 +13,6 @@ const frameMetadata = getFrameMetadata({
 export const metadata: Metadata = {
   title: 'Refuel-Frame by socket.',
   description: 'Follow this user, Like the post, and Refuel.',
-  metadataBase: new URL('https://frames-follow-like-refuel.vercel.app'),
   openGraph: {
     title: 'Refuel-Frame by socket.',
     description: 'Follow this user, Like the post, and Refuel.',
