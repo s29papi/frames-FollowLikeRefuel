@@ -106,6 +106,8 @@ export async function sendXdai(recipientAddr: string) {
       });
     
     console.log(`Transaction successful with hash: ${hash}`);
+
+    return true;
 }
 
  

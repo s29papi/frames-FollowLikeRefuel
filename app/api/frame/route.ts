@@ -56,7 +56,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   </head></html>`);
   }
 
-  await sendXdai(message?.interactor.verified_accounts[0]);
+  let sent = await sendXdai(message?.interactor.verified_accounts[0]);
+  console.log(sent)
 
 return new NextResponse(`<!DOCTYPE html><html><head>
   <title>Success Page</title>
