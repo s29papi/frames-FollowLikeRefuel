@@ -56,15 +56,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   </head></html>`);
   }
 
-  // await sendXdai();
-
-//   return new NextResponse(`<!DOCTYPE html><html><head>
-//   <title>Success</title>
-//   <meta property="fc:frame" content="vNext" />
-//   <meta property="fc:frame:image" content="https://frames-follow-like-refuel.vercel.app/sixth-page.png"/>
-//   <meta property="fc:frame:button:1" content="Success sent to ${message?.interactor.verified_accounts[0]} on Gnosis Chain  🎉" />
-//   <meta property="fc:frame:post_url" content="https://frames-follow-like-refuel.vercel.app/frame/refuel?address="${message?.interactor.verified_accounts[0]}""/>
-// </head></html>`);
+  await sendXdai(message?.interactor.verified_accounts[0]);
 
 return new NextResponse(`<!DOCTYPE html><html><head>
   <title>Success Page</title>
